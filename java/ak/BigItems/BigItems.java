@@ -7,7 +7,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid="BigItems", name="BigItems", version="1.0a",dependencies="required-after:FML", useMetadata = true)
+@Mod(modid="BigItems", name="BigItems", version="@VERSION@",dependencies="required-after:FML", useMetadata = true)
 //@NetworkMod(clientSideRequired=true, serverSideRequired=false)
 
 public class BigItems
