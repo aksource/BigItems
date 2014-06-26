@@ -15,11 +15,9 @@ public class ClientProxy extends CommonProxy
 	{
 		Item item = null;
 		for(int i= 0;i<BigItems.ItemIDs.length;i++){
-			item = GameData.itemRegistry.getObject(BigItems.ItemIDs[i]);
+			item = GameData.getItemRegistry().getObject(BigItems.ItemIDs[i]);
 			if(item != null)
 				MinecraftForgeClient.registerItemRenderer(item, new BigItemRenderer());
-			else
-				System.out.println("error");
 		}
 	}
 	@Override
