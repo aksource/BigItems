@@ -1,11 +1,11 @@
 package ak.BigItems;
 
-import net.minecraftforge.common.config.Configuration;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.common.config.Configuration;
 
 @Mod(modid="BigItems", name="BigItems", version="@VERSION@",dependencies="required-after:FML", useMetadata = true)
 //@NetworkMod(clientSideRequired=true, serverSideRequired=false)
