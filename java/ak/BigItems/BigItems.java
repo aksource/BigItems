@@ -19,7 +19,7 @@ public class BigItems
 
 
 	public static String[] ItemIDs;
-	public static double Scale;
+	public static float Scale;
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -27,7 +27,7 @@ public class BigItems
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		config.load();
 		ItemIDs = config.get(Configuration.CATEGORY_GENERAL, "Big Item Ids", new String[]{"minecraft:wooden_sword","minecraft:stone_sword","minecraft:iron_sword","minecraft:diamond_sword","minecraft:golden_sword"}, "Put Item Names which you want to make it big.").getStringList();
-		Scale = config.get(Configuration.CATEGORY_GENERAL, "Item Scale", 2.0d, "Item Scale").getDouble(2.0d);
+		Scale = (float)config.get(Configuration.CATEGORY_GENERAL, "Item Scale", 2.0d, "Item Scale").getDouble();
 		config.save();
 	}
 	@Mod.EventHandler
