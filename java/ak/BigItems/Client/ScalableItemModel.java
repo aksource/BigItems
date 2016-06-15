@@ -15,7 +15,7 @@ import javax.vecmath.Vector3f;
 import java.util.List;
 
 /**
- * Created by AKIRA on 15/02/21.
+ * Created by A.K. on 15/02/21.
  */
 public class ScalableItemModel implements IPerspectiveAwareModel {
     public static final Vector3f translate = new Vector3f(0.0F, 0.0F, 0.0F);
@@ -34,16 +34,16 @@ public class ScalableItemModel implements IPerspectiveAwareModel {
     public Pair<IBakedModel, Matrix4f> handlePerspective(ItemCameraTransforms.TransformType cameraTransformType) {
         switch (cameraTransformType) {
             case FIRST_PERSON:
-                RenderItem.applyVanillaTransform(this.originalModel.getItemCameraTransforms().field_178356_c);
+                RenderItem.applyVanillaTransform(this.originalModel.getItemCameraTransforms().firstPerson);
                 break;
             case GUI:
-                RenderItem.applyVanillaTransform(this.originalModel.getItemCameraTransforms().field_178354_e);
+                RenderItem.applyVanillaTransform(this.originalModel.getItemCameraTransforms().gui);
                 break;
             case HEAD:
-                RenderItem.applyVanillaTransform(this.originalModel.getItemCameraTransforms().field_178353_d);
+                RenderItem.applyVanillaTransform(this.originalModel.getItemCameraTransforms().head);
                 break;
             case THIRD_PERSON:
-                RenderItem.applyVanillaTransform(this.originalModel.getItemCameraTransforms().field_178355_b);
+                RenderItem.applyVanillaTransform(this.originalModel.getItemCameraTransforms().thirdPerson);
                 break;
         }
 
@@ -52,13 +52,13 @@ public class ScalableItemModel implements IPerspectiveAwareModel {
     }
 
     @Override
-    public List func_177551_a(EnumFacing facing) {
-        return originalModel.func_177551_a(facing);
+    public List getFaceQuads(EnumFacing facing) {
+        return originalModel.getFaceQuads(facing);
     }
 
     @Override
-    public List func_177550_a() {
-        return originalModel.func_177550_a();
+    public List getGeneralQuads() {
+        return originalModel.getGeneralQuads();
     }
 
     @Override
@@ -67,8 +67,8 @@ public class ScalableItemModel implements IPerspectiveAwareModel {
     }
 
     @Override
-    public boolean isAmbientOcclusionEnabled() {
-        return originalModel.isAmbientOcclusionEnabled();
+    public boolean isAmbientOcclusion() {
+        return originalModel.isAmbientOcclusion();
     }
 
     @Override

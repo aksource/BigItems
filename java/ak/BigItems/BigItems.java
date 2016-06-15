@@ -7,13 +7,20 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.config.Configuration;
 
-@Mod(modid="BigItems", name="BigItems", version="@VERSION@",dependencies="required-after:FML", useMetadata = true)
-//@NetworkMod(clientSideRequired=true, serverSideRequired=false)
+@Mod(modid=BigItems.MOD_ID,
+        name=BigItems.MOD_NAME,
+        version=BigItems.MOD_MC_VERSION,
+        dependencies=BigItems.MOD_DEPENDENCIES,
+        useMetadata = true,
+        acceptedMinecraftVersions = BigItems.MOD_MC_VERSION)
+public class BigItems {
 
-public class BigItems
-{
-	@Mod.Instance("BigItems")
-	public static BigItems instance;
+    public static final String MOD_ID = "BigItems";
+    public static final String MOD_NAME = "BigItems";
+    public static final String MOD_VERSION = "@VERSION@";
+    public static final String MOD_DEPENDENCIES = "required-after:FML";
+    public static final String MOD_MC_VERSION = "[1.8,1.8.9]";
+
 	@SidedProxy(clientSide = "ak.BigItems.Client.ClientProxy", serverSide = "ak.BigItems.CommonProxy")
 	public static CommonProxy proxy;
 
